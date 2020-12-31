@@ -21,7 +21,7 @@ public class Bresenham {
     }
 
     public void calculateSlope(){
-        this.m = (double) deltaY/deltaX;
+        this.m = (double) (y2-y1)/(x2-x1);
         System.out.println("Slope is "+m);
     }
     public void startDrawing(){
@@ -56,7 +56,7 @@ public class Bresenham {
                     }
                 }
             }
-            else if(m>-1 && m<0){
+            else if(m<0 && m>-1){
                 while(flag==0) {
                     if (p > 0) {
                         x1++;
@@ -80,6 +80,7 @@ public class Bresenham {
                     }
                 }
             }
+            else System.out.println("Error");
         }
         else if(Math.abs(m)>1){
             p = p + 2*deltaX - deltaY;
