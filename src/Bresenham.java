@@ -34,7 +34,7 @@ public class Bresenham {
             p = p + 2*deltaY - deltaX;
             if(m>0 && m<1) {
                 while(flag==0) {
-                    if (p > 0) {
+                    if (p >= 0) {
                         x1++;
                         y1++;
                         System.out.println(p + "\t\t" + x1 + "\t\t" + y1);
@@ -58,7 +58,7 @@ public class Bresenham {
             }
             else if(m<0 && m>-1){
                 while(flag==0) {
-                    if (p > 0) {
+                    if (p >= 0) {
                         x1++;
                         y1--;
                         System.out.println(p + "\t\t" + x1 + "\t\t" + y1);
@@ -80,14 +80,14 @@ public class Bresenham {
                     }
                 }
             }
-            else System.out.println("Error");
         }
-        else if(Math.abs(m)>1){
+        else if(Math.abs(m)>1 || Math.abs(m)==1){
+            //System.out.println(deltaY);
             p = p + 2*deltaX - deltaY;
-            System.out.println(p+"\t\t"+x1+"\t\t"+y1);
-            if(m>1) {
-                while(flag ==0 ) {
-                    if (p > 0) {
+            //System.out.println(p+"\t\t"+x1+"\t\t"+y1);
+            if(m>1){
+                while(flag==0) {
+                    if (p >= 0) {
                         x1++;
                         y1++;
                         System.out.println(p + "\t\t" + x1 + "\t\t" + y1);
@@ -107,12 +107,11 @@ public class Bresenham {
                         }
                         p = p + 2 * deltaX;
                     }
-
                 }
             }
             else if(m<-1){
                 while(flag==0) {
-                    if (p > 0) {
+                    if (p >= 0) {
                         x1--;
                         y1++;
                         System.out.println(p + "\t\t" + x1 + "\t\t" + y1);
